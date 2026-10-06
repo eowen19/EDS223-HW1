@@ -1,0 +1,14 @@
+# Load the libraries
+```{r}
+library(here)
+library(tidyverse)
+library(sf)
+library(stars)
+library(tmap)
+```
+
+# Load the data
+```{r}
+ej_screen <- sf::st_read(here::here("EDS223-HW1","data", "ejscreen", "EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb"))
+
+```
