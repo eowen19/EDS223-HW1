@@ -9,5 +9,15 @@ library(tmap)
 
 # Load the data
 ```{r}
-ej_screen <- sf::st_read(here::here("data", "ejscreen", "EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb"))
+ej_screen <- sf::st_read(here::here("data", "ejscreen", "EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb")) |> filter(type == 'california')
+```
+
+```{r}
+tm_shape(ej_screen)+
+    tm_raster()+
+    tm_crs('auto')
+```
+
+```{r}
+
 ```
