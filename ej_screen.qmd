@@ -1,4 +1,12 @@
-# Load the libraries
+Air quality as measured by particulate matter 2.5ppm across Santa Cruz and San Mateo counties. 
+
+The two maps presents demonstrate different levels of PM2.5 in San Mateo County to the north, and Santa Cruz County to the south. Cumulatively, the levels of PM2.5 are higher across San Mateo County when compared to Santa Cruz County. Northern San Mateo County borders San Francisco and South San Francisco, while south-eastern San Mateo borders Santa Clara County. To the west is the Pacific Ocean; this is of note considering that some of the highest levels of PM2.5 within the county are along the western border. San Mateo County has a contrasting mix of both urban areas, as well as a busy highway that serves as a conduit for travel to/from San Francisco, and large open areas that are a mix of small farms and state park land. 
+Northern Santa Cruz County borders southern San Mateo County, and consists primarily of open land, state park land, and small farms. As with San Mateo County, the Pacific Ocean sits to the west of the county; the PM2.5 levels are missing for this block of the county, while Santa Clara County sits to the east of Santa Cruz County, and Monterey County is to the south. Away from the coast, most of the county is fairly forest and pastoral, with a large farming area to the south along the Monterey County border. The highest levels of PM2.5 are along part of the border with Santa Clara County, near the town of Los Gatos. 
+
+
+
+
+## Load the libraries
 ```{r}
 library(here)
 library(tidyverse)
@@ -7,14 +15,13 @@ library(stars)
 library(tmap)
 ```
 
-# Load the data
+## Load the data
 ```{r}
 ej_screen <- sf::st_read(here::here("data", "ejscreen", "EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb")) 
-
 ```
 
-# Filter the data to California
-# Filter the data to Santa Cruz County, San Mateo County
+## Filter the data to California
+### Filter the data to Santa Cruz County, San Mateo County
 ```{r}
 california <- ej_screen %>%
   dplyr::filter(ST_ABBREV == "CA")
@@ -29,7 +36,7 @@ santa_clara <- california %>%
   dplyr::filter(CNTY_NAME %in% c("Santa Clara County"))
 ```
 
-# Build maps and label maps with PM2.5
+## Build maps and label maps with PM2.5
 ```{r}
 tm_shape(santa_cruz)+
     tm_borders()+
@@ -45,5 +52,4 @@ tm_shape(san_mateo)+
     tm_compass(position = c('right', 'top'))+
     tm_scalebar()
 ```
-
 
