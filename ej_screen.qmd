@@ -13,6 +13,8 @@ ej_screen <- sf::st_read(here::here("data", "ejscreen", "EJSCREEN_2023_BG_StateP
 
 ```
 
+# Filter the data to California
+# Filter the data to Santa Cruz County, San Mateo County
 ```{r}
 california <- ej_screen %>%
   dplyr::filter(ST_ABBREV == "CA")
@@ -24,6 +26,13 @@ san_mateo <- california %>%
     dplyr::filter(CNTY_NAME %in% c("San Mateo County"))
 ```
 
+# Form polygons and label maps
 ```{r}
+tm_shape(santa_cruz)+
+    tm_polygons()+
+    tm_layout("Santa Cruz County")
 
+tm_shape(san_mateo)+
+    tm_polygons()+
+    tm_layout("San Mateo County")
 ```
