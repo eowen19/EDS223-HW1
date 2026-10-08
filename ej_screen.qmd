@@ -9,13 +9,19 @@ library(tmap)
 
 # Load the data
 ```{r}
-ej_screen <- sf::st_read(here::here("data", "ejscreen", "EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb")) |> filter(type == 'california')
+ej_screen <- sf::st_read(here::here("data", "ejscreen", "EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb")) 
+
 ```
 
 ```{r}
-tm_shape(ej_screen)+
-    tm_raster()+
-    tm_crs('auto')
+california <- ej_screen %>%
+  dplyr::filter(ST_ABBREV == "CA")
+
+santa_cruz<- california %>%
+  dplyr::filter(CNTY_NAME %in% c("Santa Cruz County"))
+
+san_mateo <- california %>%
+    dplyr::filter(CNTY_NAME %in% c("San Mateo County"))
 ```
 
 ```{r}
