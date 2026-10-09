@@ -44,9 +44,6 @@ santa_cruz<- california %>%
 
 san_mateo <- california %>%
     dplyr::filter(CNTY_NAME %in% c("San Mateo County"))
-
-santa_clara <- california %>%
-  dplyr::filter(CNTY_NAME %in% c("Santa Clara County"))
 ```
 
 ## Build maps and label maps with PM2.5
@@ -54,14 +51,14 @@ santa_clara <- california %>%
 tm_shape(santa_cruz)+
     tm_borders()+
     tm_fill("PM25")+
-    tm_layout(main.title = "Santa Cruz County")+
+    tm_title("Santa Cruz County")+
 tm_compass(position = c('right', 'top'))+
 tm_scalebar()
 
 tm_shape(san_mateo)+
     tm_borders()+
     tm_fill("PM25") +
-    tm_layout(main.title = "San Mateo County")+
+    tm_title("San Mateo County")+
     tm_compass(position = c('right', 'top'))+
     tm_scalebar()
 ```
