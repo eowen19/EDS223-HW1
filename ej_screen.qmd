@@ -2,7 +2,7 @@
 title: "EDS223 - Homework Assignment 1"
 subtitle: "Air quality as measured by particulate matter 2.5ppm across Santa Cruz and San Mateo counties, in northern California"
 author: Elyse Owen
-date: 08 October 2026
+date: October 08 2026
 format:
   pdf:
     toc: true
