@@ -1,3 +1,16 @@
+---
+title: "EDS223 - Homework Assignment 1"
+subtitle: "Air quality as measured by particulate matter 2.5ppm across Santa Cruz and San Mateo counties, in northern California"
+author: Elyse Owen
+date: 08 October 2026
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+---
+
+
 Air quality as measured by particulate matter 2.5ppm across Santa Cruz and San Mateo counties. 
 
 The two maps presents demonstrate different levels of PM2.5 in San Mateo County to the north, and Santa Cruz County to the south. Cumulatively, the levels of PM2.5 are higher across San Mateo County when compared to Santa Cruz County. Northern San Mateo County borders San Francisco and South San Francisco, while south-eastern San Mateo borders Santa Clara County. To the west is the Pacific Ocean; this is of note considering that some of the highest levels of PM2.5 within the county are along the western border. San Mateo County has a contrasting mix of both urban areas, as well as a busy highway that serves as a conduit for travel to/from San Francisco, and large open areas that are a mix of small farms and state park land. 
